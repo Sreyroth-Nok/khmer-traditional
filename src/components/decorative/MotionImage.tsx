@@ -21,27 +21,20 @@ export const MotionImage: React.FC<MotionImageProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const path = (src + alt + (gameId || '')).toLowerCase();
+  const isAngkunh = path.includes('angkunh');
+  const isTeanhProt = path.includes('teanh-prot') || path.includes('tug');
+  const isVeaKam = path.includes('vea-kam') || path.includes('pot');
+  const isBoatRace = path.includes('boat') || path.includes('touk');
+  const isChhoung = path.includes('chhoung');
+
   const getMotionAnimationClass = () => {
     if (!isPlayingMotion) return '';
-
-    const path = src.toLowerCase() + alt.toLowerCase() + (gameId || '').toLowerCase();
-
-    if (path.includes('teanh-prot') || path.includes('tug')) {
-      return 'animate-motion-teanh-prot';
-    }
-    if (path.includes('angkunh')) {
-      return 'animate-motion-angkunh';
-    }
-    if (path.includes('vea-kam') || path.includes('pot')) {
-      return 'animate-motion-vea-kam';
-    }
-    if (path.includes('boat') || path.includes('touk')) {
-      return 'animate-motion-boat-race';
-    }
-    if (path.includes('chhoung')) {
-      return 'animate-motion-chhoung';
-    }
-
+    if (isTeanhProt) return 'animate-motion-teanh-prot';
+    if (isAngkunh) return 'animate-motion-angkunh';
+    if (isVeaKam) return 'animate-motion-vea-kam';
+    if (isBoatRace) return 'animate-motion-boat-race';
+    if (isChhoung) return 'animate-motion-chhoung';
     return 'animate-motion-live';
   };
 
@@ -85,6 +78,7 @@ export const MotionImage: React.FC<MotionImageProps> = ({
           transformStyle: 'preserve-3d'
         }}
       >
+        {/* Dynamic Image Motion Layer */}
         <img
           src={src}
           alt={alt}
@@ -92,6 +86,80 @@ export const MotionImage: React.FC<MotionImageProps> = ({
           className={`w-full h-full object-cover transition-all duration-700 ${getMotionAnimationClass()}`}
         />
 
+        {/* 🥥 BOS ANGKUNH GAMEPLAY MOTION FX OVERLAY */}
+        {isPlayingMotion && isAngkunh && (
+          <div className="absolute inset-0 pointer-events-none z-10">
+            {/* Flying Spinning Angkunh Seed Trajectory */}
+            <svg className="w-full h-full absolute inset-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path
+                d="M 20 80 Q 45 35, 75 65"
+                stroke="#E6D3A3"
+                strokeWidth="1.5"
+                strokeDasharray="3 3"
+                fill="none"
+                opacity="0.6"
+              />
+            </svg>
+
+            {/* Flying Seed 1 */}
+            <div
+              className="absolute w-6 h-6 rounded-full bg-[#3B2922] border-2 border-[#B88932] shadow-md flex items-center justify-center text-[8px] text-[#FFFDF7] animate-bounce pointer-events-none"
+              style={{
+                left: '60%',
+                top: '55%',
+                transition: 'all 0.5s ease'
+              }}
+            >
+              🌰
+            </div>
+
+            {/* Target Seed Hit Impact Ripple */}
+            <div className="absolute left-[70%] top-[60%] w-8 h-8 rounded-full border border-[#B88932] animate-ping opacity-75" />
+
+            {/* Live Gameplay Action Tag */}
+            <div className="absolute bottom-3 left-3 bg-[#3B2922]/90 border border-[#B88932]/50 text-[#E6D3A3] text-[10px] font-khmer px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#B88932] animate-ping" />
+              <span>សកម្មភាព៖ បោះ & ត្រកួសផ្លែអង្គញ់</span>
+            </div>
+          </div>
+        )}
+
+        {/* 🚣 BOAT RACING GAMEPLAY MOTION FX OVERLAY */}
+        {isPlayingMotion && isBoatRace && (
+          <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+            {/* River Spray Wave Ripples */}
+            <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-blue-500/20 to-transparent animate-pulse" />
+            <div className="absolute bottom-4 left-1/3 w-12 h-2 rounded-full bg-white/40 animate-ping" />
+            <div className="absolute bottom-3 right-1/3 w-16 h-2 rounded-full bg-white/40 animate-ping" style={{ animationDelay: '0.5s' }} />
+
+            <div className="absolute bottom-3 left-3 bg-[#3B2922]/90 border border-[#B88932]/50 text-[#E6D3A3] text-[10px] font-khmer px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
+              <span>សកម្មភាព៖ ច្រវ៉ាក់ទូកងស្ទុះល្បឿន</span>
+            </div>
+          </div>
+        )}
+
+        {/* 🪢 TEANH PROT GAMEPLAY MOTION FX OVERLAY */}
+        {isPlayingMotion && isTeanhProt && (
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute bottom-3 left-3 bg-[#3B2922]/90 border border-[#B88932]/50 text-[#E6D3A3] text-[10px] font-khmer px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#7A3030] animate-ping" />
+              <span>សកម្មភាព៖ ប្រឹងទាញខ្សែព្រ័ត្ររួមគ្នា</span>
+            </div>
+          </div>
+        )}
+
+        {/* 🏺 VEA KAM GAMEPLAY MOTION FX OVERLAY */}
+        {isPlayingMotion && isVeaKam && (
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute bottom-3 left-3 bg-[#3B2922]/90 border border-[#B88932]/50 text-[#E6D3A3] text-[10px] font-khmer px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#B88932] animate-ping" />
+              <span>សកម្មភាព៖ រុំភ្នែកវាយក្អមដី</span>
+            </div>
+          </div>
+        )}
+
+        {/* Floating Particles */}
         {isPlayingMotion && (
           <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
             <div className="absolute bottom-6 left-1/4 w-2 h-2 rounded-full bg-[#E6D3A3]/80 animate-particle" style={{ animationDelay: '0s' }} />
@@ -100,6 +168,7 @@ export const MotionImage: React.FC<MotionImageProps> = ({
           </div>
         )}
 
+        {/* Dynamic Light Sweep */}
         <div
           className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none ${
             isHovered ? 'opacity-100' : 'opacity-0'
@@ -109,6 +178,7 @@ export const MotionImage: React.FC<MotionImageProps> = ({
         <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-inherit pointer-events-none" />
       </div>
 
+      {/* Motion Photo Controller */}
       {showMotionBadge && (
         <div className="absolute top-3 right-3 z-30">
           <button
