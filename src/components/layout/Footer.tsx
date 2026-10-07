@@ -105,10 +105,13 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
         <KhmerDivider color="#E6D3A3" className="my-6" />
 
-        <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#F8F1E3]/60 font-khmer gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#F8F1E3]/70 font-khmer gap-4">
           <p>© {new Date().getFullYear()} ល្បែងប្រពៃណីខ្មែរ — Khmer Traditional Games Project. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-xs font-inter">
+          <div className="flex items-center gap-4 text-xs font-inter text-[#E6D3A3]">
             <span>Modern Khmer Heritage × Anime Cultural Art</span>
+            <span className="font-semibold bg-[#7A3030]/80 px-3 py-1 rounded-full border border-[#B88932]/40 shadow-xs">
+              develop by Zzzroth love u ❤️
+            </span>
           </div>
         </div>
       </div>
