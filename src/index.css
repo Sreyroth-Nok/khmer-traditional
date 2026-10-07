@@ -95,61 +95,89 @@ body {
   animation: gentleFloat 5s ease-in-out infinite;
 }
 
-/* 🎮 GAMEPLAY MOTION PHOTO ANIMATION KEYFRAMES 🎮 */
+/* 🎮 GAMEPLAY 5-6 SECOND MOTION PHOTO VIDEO ANIMATION KEYFRAMES 🎮 */
 
-/* 1. Tug of War Pulling Motion (Teanh Prot) */
+/* 1. Tug of War Pulling Motion (Teanh Prot - 5.5s Loop) */
 @keyframes teanhProtPull {
-  0% { transform: scale(1.08) translateX(-12px) rotate(-1.5deg); }
-  25% { transform: scale(1.10) translateX(6px) rotate(1deg); }
-  50% { transform: scale(1.08) translateX(12px) rotate(1.5deg); }
-  75% { transform: scale(1.10) translateX(-6px) rotate(-1deg); }
-  100% { transform: scale(1.08) translateX(-12px) rotate(-1.5deg); }
+  0% { transform: scale(1.08) translateX(-14px) rotate(-1.8deg); }
+  25% { transform: scale(1.10) translateX(8px) rotate(1.2deg); }
+  50% { transform: scale(1.08) translateX(14px) rotate(1.8deg); }
+  75% { transform: scale(1.10) translateX(-8px) rotate(-1.2deg); }
+  100% { transform: scale(1.08) translateX(-14px) rotate(-1.8deg); }
 }
 .animate-motion-teanh-prot {
-  animation: teanhProtPull 2.5s ease-in-out infinite;
+  animation: teanhProtPull 5.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-/* 2. Bos Angkunh Seed Throwing Motion (Bos Angkunh) */
+/* 2. Bos Angkunh Seed Throwing Motion (Bos Angkunh - 5.5s Loop) */
 @keyframes angkunhThrow {
   0% { transform: scale(1.05) translateY(0px) rotate(0deg); }
-  30% { transform: scale(1.12) translateY(-10px) rotate(2deg); }
-  50% { transform: scale(1.07) translateY(4px) rotate(-1deg); }
-  70% { transform: scale(1.10) translateY(-6px) rotate(1deg); }
+  20% { transform: scale(1.12) translateY(-12px) rotate(2deg); }
+  40% { transform: scale(1.08) translateY(6px) rotate(-1.5deg); }
+  60% { transform: scale(1.11) translateY(-8px) rotate(1.5deg); }
+  80% { transform: scale(1.06) translateY(2px) rotate(-0.5deg); }
   100% { transform: scale(1.05) translateY(0px) rotate(0deg); }
 }
 .animate-motion-angkunh {
-  animation: angkunhThrow 3s ease-in-out infinite;
+  animation: angkunhThrow 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* 3. Vea K'am Clay Pot Swing Motion (Vea K'am) */
+/* 5.5s Flying Angkunh Seed Keyframes */
+@keyframes angkunhSeedFlight {
+  0% { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(0.6); }
+  15% { opacity: 1; transform: translate(60px, -45px) rotate(180deg) scale(1.2); }
+  35% { opacity: 1; transform: translate(160px, 15px) rotate(450deg) scale(1.1); }
+  45% { opacity: 0.8; transform: translate(180px, 20px) rotate(540deg) scale(0.8); }
+  55% { opacity: 0; transform: translate(190px, 30px) rotate(600deg) scale(0.5); }
+  100% { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(0.6); }
+}
+.animate-angkunh-seed-flight {
+  animation: angkunhSeedFlight 5.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+/* 3. Vea K'am Clay Pot Swing Motion (Vea K'am - 5.5s Loop) */
 @keyframes veaKamSwing {
-  0% { transform: scale(1.06) rotate(-2.5deg) translateY(-4px); }
-  50% { transform: scale(1.12) rotate(2.5deg) translateY(4px); }
-  100% { transform: scale(1.06) rotate(-2.5deg) translateY(-4px); }
+  0% { transform: scale(1.06) rotate(-3deg) translateY(-5px); }
+  30% { transform: scale(1.12) rotate(3deg) translateY(5px); }
+  60% { transform: scale(1.08) rotate(-2deg) translateY(-3px); }
+  100% { transform: scale(1.06) rotate(-3deg) translateY(-5px); }
 }
 .animate-motion-vea-kam {
-  animation: veaKamSwing 2s ease-in-out infinite;
+  animation: veaKamSwing 5.5s ease-in-out infinite;
 }
 
-/* 4. Boat Racing Synchronized Rowing Glide (Boat Race) */
+/* 4. Boat Racing Synchronized Rowing Glide (Boat Race - 5.5s Loop) */
 @keyframes boatRaceRow {
-  0% { transform: scale(1.08) translateX(-15px) translateY(-5px); }
-  50% { transform: scale(1.12) translateX(15px) translateY(5px); }
-  100% { transform: scale(1.08) translateX(-15px) translateY(-5px); }
+  0% { transform: scale(1.08) translateX(-18px) translateY(-6px); }
+  30% { transform: scale(1.12) translateX(18px) translateY(6px); }
+  60% { transform: scale(1.09) translateX(-8px) translateY(-3px); }
+  100% { transform: scale(1.08) translateX(-18px) translateY(-6px); }
 }
 .animate-motion-boat-race {
-  animation: boatRaceRow 2.8s ease-in-out infinite;
+  animation: boatRaceRow 5.5s ease-in-out infinite;
 }
 
-/* 5. Chhoung Scarf Toss Float (Chhoung) */
+/* 5. Chhoung Scarf Toss Float (Chhoung - 5.5s Loop) */
 @keyframes chhoungToss {
-  0% { transform: scale(1.05) translateY(0px) rotate(-1deg); }
-  40% { transform: scale(1.11) translateY(-14px) rotate(2deg); }
-  70% { transform: scale(1.06) translateY(-4px) rotate(-1deg); }
-  100% { transform: scale(1.05) translateY(0px) rotate(-1deg); }
+  0% { transform: scale(1.05) translateY(0px) rotate(-1.5deg); }
+  35% { transform: scale(1.12) translateY(-16px) rotate(2.5deg); }
+  70% { transform: scale(1.07) translateY(-5px) rotate(-1deg); }
+  100% { transform: scale(1.05) translateY(0px) rotate(-1.5deg); }
 }
 .animate-motion-chhoung {
-  animation: chhoungToss 3.5s ease-in-out infinite;
+  animation: chhoungToss 5.5s ease-in-out infinite;
+}
+
+/* 5.5s Flying Chhoung Scarf Ball Flight */
+@keyframes chhoungScarfFlight {
+  0% { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(0.6); }
+  20% { opacity: 1; transform: translate(-70px, -50px) rotate(-120deg) scale(1.2); }
+  50% { opacity: 1; transform: translate(80px, -30px) rotate(240deg) scale(1.1); }
+  75% { opacity: 0.6; transform: translate(100px, 10px) rotate(360deg) scale(0.8); }
+  100% { opacity: 0; transform: translate(0px, 0px) rotate(0deg) scale(0.6); }
+}
+.animate-chhoung-flight {
+  animation: chhoungScarfFlight 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Universal Live Motion Photo Pulsing Breathing */
@@ -158,7 +186,7 @@ body {
   50% { transform: scale(1.09) rotate(0.8deg); }
 }
 .animate-motion-live {
-  animation: livePhotoPulse 4s ease-in-out infinite;
+  animation: livePhotoPulse 5.5s ease-in-out infinite;
 }
 
 /* Floating Motion Particles */
