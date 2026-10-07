@@ -4,6 +4,7 @@ import type { Language } from '../types/game';
 import { getFestivalBySlug, getGamesForFestival } from '../utils/gameUtils';
 import { KhmerFrameContainer } from '../components/layout/KhmerOrnament';
 import { KhmerDivider } from '../components/decorative/KhmerDivider';
+import { MotionImage } from '../components/decorative/MotionImage';
 import { GameGrid } from '../components/games/GameGrid';
 import { ArrowLeft, AlertCircle } from 'lucide-react';
 
@@ -74,10 +75,11 @@ export const FestivalPage: React.FC<FestivalProps> = ({ lang }) => {
           <div className="lg:col-span-5">
             <KhmerFrameContainer>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#B88932]">
-                <img
+                <MotionImage
                   src={festival.image}
                   alt={festival.nameKh}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
+                  gameId={festival.id}
                 />
               </div>
             </KhmerFrameContainer>

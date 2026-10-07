@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import type { TraditionalGame, Language } from '../../types/game';
 import { KhmerFrameContainer } from '../layout/KhmerOrnament';
 import { KhmerFlower } from '../decorative/KhmerFlower';
+import { MotionImage } from '../decorative/MotionImage';
 import { Sparkles, ArrowRight, Users, Clock } from 'lucide-react';
 import { FESTIVALS } from '../../data/festivals';
 
@@ -27,12 +28,12 @@ export const FeaturedGame: React.FC<FeaturedGameProps> = ({ game, lang }) => {
           <div className="lg:col-span-6">
             <KhmerFrameContainer>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-[#B88932]/40 bg-[#3B2922]">
-                <img
+                <MotionImage
                   src={game.image}
                   alt={game.nameKh}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
                 />
-                <div className="absolute top-3 left-3 bg-[#7A3030] text-[#FFFDF7] text-xs font-khmer font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
+                <div className="absolute top-3 left-3 z-20 bg-[#7A3030] text-[#FFFDF7] text-xs font-khmer font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
                   <Sparkles size={14} className="text-[#E6D3A3]" />
                   <span>{lang === 'kh' ? '🌟 ល្បែងប្រចាំថ្ងៃ' : '🌟 Featured Game'}</span>
                 </div>

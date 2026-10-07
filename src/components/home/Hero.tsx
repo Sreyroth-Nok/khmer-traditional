@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import type { Language } from '../../types/game';
 import { KhmerFrameContainer } from '../layout/KhmerOrnament';
 import { KhmerFlower } from '../decorative/KhmerFlower';
+import { MotionImage } from '../decorative/MotionImage';
 import { Search, Sparkles, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
@@ -74,13 +75,13 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenSearch }) => {
           <div className="lg:col-span-5">
             <KhmerFrameContainer>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-2 border-[#B88932] bg-[#E6D3A3]/20">
-                <img
+                <MotionImage
                   src="/illustrations/hero.png"
                   alt="Khmer Traditional Games Anime Art"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full"
                 />
                 
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-[#3B2922]/90 backdrop-blur-md border border-[#B88932]/40 text-[#F8F1E3] text-xs font-khmer flex items-center justify-between shadow-lg">
+                <div className="absolute bottom-4 left-4 right-4 z-20 p-3 rounded-2xl bg-[#3B2922]/90 backdrop-blur-md border border-[#B88932]/40 text-[#F8F1E3] text-xs font-khmer flex items-center justify-between shadow-lg">
                   <div className="flex items-center gap-2">
                     <KhmerFlower size={20} color="#E6D3A3" />
                     <span>{lang === 'kh' ? 'សិល្បៈគំនូររូបភាពប្រពៃណីខ្មែរ' : 'Anime Cultural Illustration'}</span>

@@ -76,7 +76,7 @@ body {
   box-shadow: 0 10px 30px -4px rgba(59, 41, 34, 0.12);
 }
 
-/* Keyframe animations */
+/* Keyframe animations for General Elements */
 @keyframes floralPulse {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.05); opacity: 1; }
@@ -87,12 +87,88 @@ body {
 }
 
 @keyframes gentleFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  0%, 100% { transform: translateY(0px) scale(1.03); }
+  50% { transform: translateY(-8px) scale(1.06); }
 }
 
 .animate-float {
   animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* 🎮 GAMEPLAY MOTION PHOTO ANIMATION KEYFRAMES 🎮 */
+
+/* 1. Tug of War Pulling Motion (Teanh Prot) */
+@keyframes teanhProtPull {
+  0% { transform: scale(1.08) translateX(-12px) rotate(-1.5deg); }
+  25% { transform: scale(1.10) translateX(6px) rotate(1deg); }
+  50% { transform: scale(1.08) translateX(12px) rotate(1.5deg); }
+  75% { transform: scale(1.10) translateX(-6px) rotate(-1deg); }
+  100% { transform: scale(1.08) translateX(-12px) rotate(-1.5deg); }
+}
+.animate-motion-teanh-prot {
+  animation: teanhProtPull 2.5s ease-in-out infinite;
+}
+
+/* 2. Bos Angkunh Seed Throwing Motion (Bos Angkunh) */
+@keyframes angkunhThrow {
+  0% { transform: scale(1.05) translateY(0px) rotate(0deg); }
+  30% { transform: scale(1.12) translateY(-10px) rotate(2deg); }
+  50% { transform: scale(1.07) translateY(4px) rotate(-1deg); }
+  70% { transform: scale(1.10) translateY(-6px) rotate(1deg); }
+  100% { transform: scale(1.05) translateY(0px) rotate(0deg); }
+}
+.animate-motion-angkunh {
+  animation: angkunhThrow 3s ease-in-out infinite;
+}
+
+/* 3. Vea K'am Clay Pot Swing Motion (Vea K'am) */
+@keyframes veaKamSwing {
+  0% { transform: scale(1.06) rotate(-2.5deg) translateY(-4px); }
+  50% { transform: scale(1.12) rotate(2.5deg) translateY(4px); }
+  100% { transform: scale(1.06) rotate(-2.5deg) translateY(-4px); }
+}
+.animate-motion-vea-kam {
+  animation: veaKamSwing 2s ease-in-out infinite;
+}
+
+/* 4. Boat Racing Synchronized Rowing Glide (Boat Race) */
+@keyframes boatRaceRow {
+  0% { transform: scale(1.08) translateX(-15px) translateY(-5px); }
+  50% { transform: scale(1.12) translateX(15px) translateY(5px); }
+  100% { transform: scale(1.08) translateX(-15px) translateY(-5px); }
+}
+.animate-motion-boat-race {
+  animation: boatRaceRow 2.8s ease-in-out infinite;
+}
+
+/* 5. Chhoung Scarf Toss Float (Chhoung) */
+@keyframes chhoungToss {
+  0% { transform: scale(1.05) translateY(0px) rotate(-1deg); }
+  40% { transform: scale(1.11) translateY(-14px) rotate(2deg); }
+  70% { transform: scale(1.06) translateY(-4px) rotate(-1deg); }
+  100% { transform: scale(1.05) translateY(0px) rotate(-1deg); }
+}
+.animate-motion-chhoung {
+  animation: chhoungToss 3.5s ease-in-out infinite;
+}
+
+/* Universal Live Motion Photo Pulsing Breathing */
+@keyframes livePhotoPulse {
+  0%, 100% { transform: scale(1.04) rotate(0deg); }
+  50% { transform: scale(1.09) rotate(0.8deg); }
+}
+.animate-motion-live {
+  animation: livePhotoPulse 4s ease-in-out infinite;
+}
+
+/* Floating Motion Particles */
+@keyframes particleRise {
+  0% { opacity: 0; transform: translateY(10px) scale(0.6); }
+  50% { opacity: 0.8; transform: translateY(-15px) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.2); }
+}
+.animate-particle {
+  animation: particleRise 2.5s ease-in-out infinite;
 }
 
 /* Reduced motion support */

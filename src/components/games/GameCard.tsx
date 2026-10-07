@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { TraditionalGame, Language } from '../../types/game';
 import { KhmerFrameContainer } from '../layout/KhmerOrnament';
+import { MotionImage } from '../decorative/MotionImage';
 import { Sparkles, ArrowRight, Users, Clock } from 'lucide-react';
 import { FESTIVALS } from '../../data/festivals';
 
@@ -17,24 +18,24 @@ export const GameCard: React.FC<GameCardProps> = ({ game, lang }) => {
       <div className="h-full bg-[#FFFDF7] rounded-2xl khmer-card-border overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1">
         
         <div>
+          {/* Motion Photo Container */}
           <div className="relative aspect-[4/3] overflow-hidden bg-[#E6D3A3]/20">
-            <img
+            <MotionImage
               src={game.image}
               alt={game.nameKh}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              className="w-full h-full"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#3B2922]/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3B2922]/80 via-transparent to-transparent pointer-events-none z-10" />
 
             {game.featured && (
-              <div className="absolute top-3 left-3 bg-[#7A3030] text-[#FFFDF7] text-xs font-khmer font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
+              <div className="absolute top-3 left-3 z-20 bg-[#7A3030] text-[#FFFDF7] text-xs font-khmer font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
                 <Sparkles size={13} className="text-[#E6D3A3]" />
                 <span>{lang === 'kh' ? 'ល្បែងប្រចាំថ្ងៃ' : 'Featured Game'}</span>
               </div>
             )}
 
-            <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1.5">
+            <div className="absolute bottom-3 left-3 right-3 z-20 flex flex-wrap gap-1.5">
               {gameFestivals.map(fest => (
                 <span
                   key={fest.id}

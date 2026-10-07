@@ -3,6 +3,7 @@ import type { Language } from '../../types/game';
 import { FESTIVALS } from '../../data/festivals';
 import { KhmerDivider } from '../decorative/KhmerDivider';
 import { KhmerFrameContainer } from '../layout/KhmerOrnament';
+import { MotionImage } from '../decorative/MotionImage';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 interface FestivalCategoriesProps {
@@ -28,22 +29,23 @@ export const FestivalCategories: React.FC<FestivalCategoriesProps> = ({ lang }) 
               className="group block h-full bg-[#FFFDF7] rounded-3xl khmer-card-border overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
             >
               <div className="relative aspect-[16/9] overflow-hidden bg-[#3B2922]">
-                <img
+                <MotionImage
                   src={festival.image}
                   alt={festival.nameKh}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  className="w-full h-full"
+                  gameId={festival.id}
                 />
 
-                <div className={`absolute inset-0 bg-gradient-to-t ${festival.bannerBg}`} />
+                <div className={`absolute inset-0 bg-gradient-to-t ${festival.bannerBg} pointer-events-none z-10`} />
 
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[#FFFDF7]">
+                <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between text-[#FFFDF7]">
                   <span className="text-3xl">{festival.icon}</span>
                   <span className="px-3 py-1 rounded-full bg-[#FFFDF7]/20 backdrop-blur-md border border-white/30 text-xs font-khmer font-bold">
                     {lang === 'kh' ? festival.monthKh : festival.monthEn}
                   </span>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4 text-[#FFFDF7] space-y-1">
+                <div className="absolute bottom-4 left-4 right-4 z-20 text-[#FFFDF7] space-y-1">
                   <h3 className="text-2xl md:text-3xl font-extrabold font-khmer drop-shadow-md">
                     {lang === 'kh' ? festival.nameKh : festival.nameEn}
                   </h3>

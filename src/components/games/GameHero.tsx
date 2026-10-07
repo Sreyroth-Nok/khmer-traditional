@@ -1,5 +1,6 @@
 import type { TraditionalGame, Language } from '../../types/game';
 import { KhmerFrameContainer } from '../layout/KhmerOrnament';
+import { MotionImage } from '../decorative/MotionImage';
 import { FESTIVALS } from '../../data/festivals';
 import { MapPin, Tag } from 'lucide-react';
 
@@ -60,12 +61,11 @@ export const GameHero: React.FC<GameHeroProps> = ({ game, lang }) => {
         <div className="lg:col-span-5">
           <KhmerFrameContainer>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#B88932]/30 bg-[#E6D3A3]/30">
-              <img
+              <MotionImage
                 src={game.image}
                 alt={game.nameKh}
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl pointer-events-none" />
             </div>
           </KhmerFrameContainer>
         </div>
