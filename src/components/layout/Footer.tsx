@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
+
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-full bg-[#FFFDF7] border border-[#B88932]">
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           <div className="flex items-center gap-4 text-xs font-inter text-[#E6D3A3]">
             <span>Modern Khmer Heritage × Anime Cultural Art</span>
             <span className="font-semibold bg-[#7A3030]/80 px-3 py-1 rounded-full border border-[#B88932]/40 shadow-xs">
-              develop by Zzzroth love u ❤️
+              develop by Zzzroth love u
             </span>
           </div>
         </div>
