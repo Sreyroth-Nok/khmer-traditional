@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-khmer-bg: #F8F1E3;
+  --color-khmer-brown: #3B2922;
+  --color-khmer-gold: #B88932;
+  --color-khmer-red: #7A3030;
+  --color-khmer-green: #526548;
+  --color-khmer-lightgold: #E6D3A3;
+  --color-khmer-card: #FFFDF7;
+  --color-khmer-text: #2B211C;
+
+  --font-khmer: 'Noto Sans Khmer', 'Kantumruy Pro', sans-serif;
+  --font-kantumruy: 'Kantumruy Pro', 'Noto Sans Khmer', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+:root {
+  --bg-color: #F8F1E3;
+  --text-color: #2B211C;
+  --brown-color: #3B2922;
+  --gold-color: #B88932;
+  --red-color: #7A3030;
+  --green-color: #526548;
+  --lightgold-color: #E6D3A3;
+  --card-color: #FFFDF7;
+}
+
+body {
+  font-family: var(--font-khmer);
+  background-color: #F8F1E3;
+  color: #2B211C;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F1E3;
+}
+::-webkit-scrollbar-thumb {
+  background: #B88932;
+  border-radius: 5px;
+  border: 2px solid #F8F1E3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7A3030;
+}
+
+/* Khmer Floral Motif Background Pattern */
+.bg-khmer-pattern {
+  background-color: #F8F1E3;
+  background-image: radial-gradient(#B88932 0.75px, transparent 0.75px), radial-gradient(#B88932 0.75px, #F8F1E3 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-opacity: 0.15;
+}
+
+/* Smooth transition utility */
+.transition-khmer {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass & Card subtle gold border */
+.khmer-card-border {
+  border: 1px solid rgba(184, 137, 50, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(59, 41, 34, 0.06);
+}
+
+.khmer-card-border:hover {
+  border-color: rgba(184, 137, 50, 0.5);
+  box-shadow: 0 10px 30px -4px rgba(59, 41, 34, 0.12);
+}
+
+/* Keyframe animations */
+@keyframes floralPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-floral-pulse {
+  animation: floralPulse 4s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
